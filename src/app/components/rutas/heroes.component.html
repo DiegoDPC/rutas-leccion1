@@ -1,0 +1,30 @@
+<h1>RUTAS:
+    <small> Cooperativa de Transporte de Ecuador</small></h1>
+<hr>
+
+BUSCAR: ORIGEN
+<div class="form-group">
+    <div class="input-group">
+        <input class="form-control" type="text" placeholder="Buscar héroes"
+            [(ngModel)]="terminoBusqueda" (input)="buscarHeroes()">
+        <button class="btn btn-danger" type="button" (click)="buscarHeroes()">Buscar</button>
+    </div>
+</div>
+<div class="col animated fadeIn fast"
+    *ngFor="let heroe of heroesEncontrados; let i = index">
+    <div class="card mb-3 " style="max-width: 540px; ">
+        <div class="row g-0 ">
+            
+            <div class="col-md-8 ">
+                <div class="card-body ">
+                    <h5 class="card-title ">{{heroe.origen}}</h5>
+                    <p class="card-text ">{{heroe.destino}}</p>
+                    <p class="card-text "><small class="text-muted ">{{heroe.precio}}
+                            {{heroe.descripcion}}</small></p>
+                    <button (click)="verHeroe(i)" type="button"
+                        class="btn btn-danger"> Ver más</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
